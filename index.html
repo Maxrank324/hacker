@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="TfWeRoxvDvppBHS868G9sipSAib_8GU2-jvdWRwjhXo" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Warning</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    color:#ff1a1a;
+    font-family:"Courier New",monospace;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+.container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.box{
+    width:900px;
+    max-width:95%;
+    background:#050505;
+    border:2px solid #ff1a1a;
+    box-shadow:0 0 25px #ff0000,
+               0 0 70px #ff000055;
+    padding:30px;
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    border-bottom:1px solid #551111;
+    padding-bottom:20px;
+}
+
+.header h1{
+    font-size:32px;
+    letter-spacing:5px;
+    color:#ff1a1a;
+}
+
+.header p{
+    margin-top:10px;
+    color:#888;
+}
+
+/* STATUS */
+
+.status{
+    text-align:center;
+    color:white;
+    margin:25px 0 12px;
+    font-size:18px;
+}
+
+/* PROGRESS */
+
+.progress-container{
+    width:100%;
+    height:25px;
+    border:1px solid #ff1a1a;
+    padding:3px;
+}
+
+.progress{
+    width:0%;
+    height:100%;
+    background:#ff1a1a;
+    box-shadow:0 0 15px red;
+    transition:.25s;
+}
+
+.percent{
+    color:white;
+    text-align:center;
+    margin:10px 0 20px;
+}
+
+/* TERMINAL */
+
+.terminal{
+    height:180px;
+    background:#000;
+    border:1px solid #351010;
+    padding:15px;
+    color:#ff4d4d;
+    font-size:14px;
+    line-height:1.7;
+    overflow:hidden;
+}
+
+/* WARNING */
+
+.warning{
+    display:none;
+    text-align:center;
+    margin-top:25px;
+}
+
+.warning-title{
+    color:#ff1a1a;
+    font-size:38px;
+    font-weight:bold;
+    margin-bottom:25px;
+    animation:blink .6s infinite alternate;
+}
+
+.hacked{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+    margin:20px 0;
+    animation:blink .7s infinite alternate;
+}
+
+.warning-list{
+    text-align:left;
+    width:max-content;
+    max-width:100%;
+    margin:20px auto;
+    color:#ff1a1a;
+    font-size:22px;
+    font-weight:bold;
+    line-height:2;
+}
+
+.footer{
+    color:white;
+    margin-top:25px;
+    font-size:16px;
+}
+
+/* BLINK */
+
+@keyframes blink{
+    from{
+        opacity:.55;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* SHAKE */
+
+.shake{
+    animation:shake .08s infinite;
+}
+
+@keyframes shake{
+    0%{
+        transform:translate(2px,1px);
+    }
+
+    25%{
+        transform:translate(-2px,-1px);
+    }
+
+    50%{
+        transform:translate(1px,-2px);
+    }
+
+    75%{
+        transform:translate(-1px,2px);
+    }
+
+    100%{
+        transform:translate(2px,1px);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .box{
+        padding:18px;
+    }
+
+    .header h1{
+        font-size:22px;
+    }
+
+    .warning-title{
+        font-size:27px;
+    }
+
+    .hacked{
+        font-size:20px;
+    }
+
+    .warning-list{
+        font-size:17px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="box">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>⚠ SECURITY CENTER</h1>
+
+        <p>
+            Advanced Privacy &amp; Security Diagnostic
+        </p>
+
+    </div>
+
+
+    <!-- STATUS -->
+
+    <div class="status" id="status">
+
+        INITIALIZING SECURITY SCAN...
+
+    </div>
+
+
+    <!-- PROGRESS BAR -->
+
+    <div class="progress-container">
+
+        <div
+            class="progress"
+            id="progress">
+        </div>
+
+    </div>
+
+
+    <div
+        class="percent"
+        id="percent">
+
+        0%
+
+    </div>
+
+
+    <!-- TERMINAL -->
+
+    <div
+        class="terminal"
+        id="terminal">
+
+        &gt; Starting security diagnostic...<br>
+        &gt; Loading security modules...
+
+    </div>
+
+
+    <!-- FINAL WARNING -->
+
+    <div
+        class="warning"
+        id="warning">
+
+        <div class="warning-title">
+
+            ⚠ CRITICAL SECURITY WARNING ⚠
+
+        </div>
+
+
+        <div class="hacked">
+
+            YOUR ALL DATA IS HACKED &amp; LEAKED
+
+        </div>
+
+
+        <div class="warning-list">
+
+            <div>
+                1. YOU ARE NOT PRIVATE
+            </div>
+
+            <div>
+                2. DANGEROUS SITE
+            </div>
+
+            <div>
+                3. SECURITY BREACH DETECTED
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+
+            Unauthorized activity detected.<br><br>
+
+            Privacy protection has been compromised.
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   SECURITY SCAN
+========================= */
+
+let progress = 0;
+
+
+const commands = [
+
+    "Checking browser security...",
+
+    "Scanning privacy settings...",
+
+    "Analyzing network connection...",
+
+    "Checking security protocols...",
+
+    "Detecting unusual activity...",
+
+    "Running privacy verification...",
+
+    "Analyzing security status...",
+
+    "Final security analysis..."
+
+];
+
+
+const progressBar =
+document.getElementById("progress");
+
+
+const percent =
+document.getElementById("percent");
+
+
+const terminal =
+document.getElementById("terminal");
+
+
+const status =
+document.getElementById("status");
+
+
+const warning =
+document.getElementById("warning");
+
+
+/* START SCAN */
+
+let scan = setInterval(function(){
+
+    progress +=
+    Math.floor(Math.random() * 7) + 3;
+
+
+    /* COMPLETE */
+
+    if(progress >= 100){
+
+        progress = 100;
+
+        clearInterval(scan);
+
+
+        progressBar.style.width =
+        "100%";
+
+
+        percent.innerHTML =
+        "100%";
+
+
+        status.innerHTML =
+        "⚠ SECURITY ANALYSIS COMPLETED";
+
+
+        terminal.innerHTML +=
+
+        "<br>&gt; FINAL CHECK COMPLETED." +
+
+        "<br>&gt; ANALYZING SECURITY STATUS..." +
+
+        "<br>&gt; WARNING: UNUSUAL ACTIVITY DETECTED.";
+
+
+        /* SHOW WARNING */
+
+        setTimeout(function(){
+
+            showWarning();
+
+        },1200);
+
+    }
+
+
+    /* CONTINUE SCAN */
+
+    else{
+
+        progressBar.style.width =
+        progress + "%";
+
+
+        percent.innerHTML =
+        progress + "%";
+
+
+        let index =
+        Math.min(
+            Math.floor(progress / 13),
+            commands.length - 1
+        );
+
+
+        terminal.innerHTML +=
+
+        "<br>&gt; " +
+        commands[index];
+
+
+        terminal.scrollTop =
+        terminal.scrollHeight;
+
+    }
+
+},650);
+
+
+/* =========================
+   FINAL WARNING
+========================= */
+
+function showWarning(){
+
+    document.body.classList.add(
+        "shake"
+    );
+
+
+    warning.style.display =
+    "block";
+
+
+    /* Stop shaking */
+
+    setTimeout(function(){
+
+        document.body.classList.remove(
+            "shake"
+        );
+
+    },1800);
+
+}
+
+</script>
+
+</body>
+</html>
